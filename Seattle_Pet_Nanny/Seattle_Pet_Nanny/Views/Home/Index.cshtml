@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="jumbotron homeBanner text-center">
+    <div class="bannerText">
+        <img class="hmebanner" src="~/imgs/SPN PURPLE BACK_LOGO.png" />
+        <p>Safe, Trustworthy, and Reliable</p>
+    </div>
+</div>
+<div class="container serviceContainer">
+    <div>
+        <h2 class="serviceLine">| SERVICES |</h2>
+    </div>
+    <div class="container services">
+        <div class="row servicesRow">
+            <div class="col-sm-4 oneOnone">
+                <h3>1 on 1 walks</h3>
+                <p>Best for shy, aggressive, or older dogs.</p>
+
+            </div>
+
+            <div class="col-sm-4 oneOnone">
+                <h3>Overnight Nanny</h3>
+                <p>When you can't get home in time.</p>
+
+            </div>
+
+            <div class="col-sm-4 oneOnone">
+                <h3>Leader Of The Pack</h3>
+                <p>Best for practicing or gaining social skills.</p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <p><a href="~/Home/Rates">LEARN MORE</a></p>
+    </div>
+</div>
+
+
+@*commenting this out as we are starting off with static pages, no identity*@
+@*<div class="jumbotron registerBanner text-center">
+    <h2>Sign up for Nanny Sevices Here</h2>
+    @if (!User.Identities.Any(u => u.IsAuthenticated))
+    {
+        <p><a href="~/Account/Register">Start Instantly</a></p>
+    }
+    else
+    {
+        <p><a href="~/Account/ProfilePage">Start Instantly</a></p>
+    }
+</div>*@
