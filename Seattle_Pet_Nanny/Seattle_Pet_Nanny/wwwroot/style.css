@@ -93,14 +93,14 @@ body {
 }
 
 .ppic2 {
-    background-image: url(imgs/pexels-photo-351406.jpeg);
+    background-image: url(images/pexels-photo-351406.jpeg);
 }
 
 .proPic {
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    background-image: url(imgs/pexels-photo-164446.jpeg);
+    background-image: url(images/pexels-photo-164446.jpeg);
     background-size: cover;
 }
 
