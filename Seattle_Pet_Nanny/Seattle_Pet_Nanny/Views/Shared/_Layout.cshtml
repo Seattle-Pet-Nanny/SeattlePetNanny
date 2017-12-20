@@ -32,9 +32,9 @@
                 @*commenting this out as we are not handling identity yet*@
 
                 @*@if (User.Identities.Any(u => u.IsAuthenticated))
-                {
-                     <span class="icon-bar"></span>
-                }*@
+                    {
+                         <span class="icon-bar"></span>
+                    }*@
             </button>
             <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><img class="hmelogo" src="~/images/homelogo.png" width="25" /></a>
         </div>
@@ -46,28 +46,28 @@
                 @*commenting this out as we are not handling identity yet*@
 
                 @*@if (User.Identities.Any(u => u.IsAuthenticated))
-                 {
-                    <li><a asp-area="" asp-controller="Account" asp-action="ProfilePage">Profile</a></li>
-                 }*@
+                    {
+                       <li><a asp-area="" asp-controller="Account" asp-action="ProfilePage">Profile</a></li>
+                    }*@
             </ul>
         </div>
     </div>
     @*commenting this out as we are not handling identity yet*@
     @*<div>
-        @if (!User.Identities.Any(u => u.IsAuthenticated))
-        {
-            <span><a href="~/Account/Login"> Login </a> || <a href="~/Account/Register"> Register </a></span>
+            @if (!User.Identities.Any(u => u.IsAuthenticated))
+            {
+                <span><a href="~/Account/Login"> Login </a> || <a href="~/Account/Register"> Register </a></span>
 
-        }
-        else
-        {
-            <span>
-                Hello, @User.Identities.First(u => u.IsAuthenticated &&
-              u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value
-                || Click <a href="~/Account/Logout"> here </a> to sign out.
-            </span>
-        }
-    </div>*@
+            }
+            else
+            {
+                <span>
+                    Hello, @User.Identities.First(u => u.IsAuthenticated &&
+                  u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value
+                    || Click <a href="~/Account/Logout"> here </a> to sign out.
+                </span>
+            }
+        </div>*@
     <div>
         @RenderBody()
     </div>
@@ -96,18 +96,18 @@
         </div>
     </footer>
 
-    <environment include="Development">
+    <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
-            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-            crossorigin="anonymous"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-    </script>
-    <environment exclude="Development">
+    <environment names="Staging, Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
@@ -117,6 +117,7 @@
 
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
+    @*@RenderSection("scripts", required: false);*@
 </body>
 </html>
 
