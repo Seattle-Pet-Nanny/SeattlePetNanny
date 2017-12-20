@@ -28,7 +28,15 @@ namespace Seattle_Pet_Nanny
 
             app.UseAuthentication();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(route =>
+                {
+                    //setting up the routing template for the URL - this is currently showing a blank page with "Hello World"
+                    route.MapRoute(
+                        name: "default",
+                        template: "{controller=Home}"
+                        );
+                }
+                    );
 
             app.UseStaticFiles();
 
