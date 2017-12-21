@@ -57,22 +57,9 @@
             </ul>
         </div>
     </div>
-    @*commenting this out as we are not handling identity yet*@
-    @*<div>
-            @if (!User.Identities.Any(u => u.IsAuthenticated))
-            {
-                <span><a href="~/Account/Login"> Login </a> || <a href="~/Account/Register"> Register </a></span>
-
-            }
-            else
-            {
-                <span>
-                    Hello, @User.Identities.First(u => u.IsAuthenticated &&
-                  u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value
-                    || Click <a href="~/Account/Logout"> here </a> to sign out.
-                </span>
-            }
-        </div>*@
+    <div>
+        <p>Miya is the bestest everrrrr.</p>
+    </div>
     <div>
         @RenderBody()
     </div>
